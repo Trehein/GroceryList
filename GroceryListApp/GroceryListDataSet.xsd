@@ -7,7 +7,7 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GroceryListConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GroceryListConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GroceryListApp.Properties.Settings.GlobalReference.Default.GroceryListConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="InCartTableAdapter" GeneratorDataComponentClassName="InCartTableAdapter" Name="InCart" UserDataComponentName="InCartTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CartTableAdapter" GeneratorDataComponentClassName="CartTableAdapter" Name="Cart" UserDataComponentName="CartTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="GroceryListConnectionString (Settings)" DbObjectName="dbo.InCart" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
@@ -130,7 +130,7 @@ SELECT Id, Name, Type, Amount FROM List WHERE (Id = @Id)</CommandText>
   <xs:element name="GroceryListDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="GroceryListDataSet" msprop:Generator_UserDSName="GroceryListDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="InCart" msprop:Generator_TableClassName="InCartDataTable" msprop:Generator_TableVarName="tableInCart" msprop:Generator_TablePropName="InCart" msprop:Generator_RowDeletingName="InCartRowDeleting" msprop:Generator_RowChangingName="InCartRowChanging" msprop:Generator_RowEvHandlerName="InCartRowChangeEventHandler" msprop:Generator_RowDeletedName="InCartRowDeleted" msprop:Generator_UserTableName="InCart" msprop:Generator_RowChangedName="InCartRowChanged" msprop:Generator_RowEvArgName="InCartRowChangeEvent" msprop:Generator_RowClassName="InCartRow">
+        <xs:element name="Cart" msprop:Generator_TableClassName="CartDataTable" msprop:Generator_TableVarName="tableCart" msprop:Generator_RowChangedName="CartRowChanged" msprop:Generator_TablePropName="Cart" msprop:Generator_RowDeletingName="CartRowDeleting" msprop:Generator_RowChangingName="CartRowChanging" msprop:Generator_RowEvHandlerName="CartRowChangeEventHandler" msprop:Generator_RowDeletedName="CartRowDeleted" msprop:Generator_RowClassName="CartRow" msprop:Generator_UserTableName="Cart" msprop:Generator_RowEvArgName="CartRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -158,7 +158,7 @@ SELECT Id, Name, Type, Amount FROM List WHERE (Id = @Id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="List" msprop:Generator_TableClassName="ListDataTable" msprop:Generator_TableVarName="tableList" msprop:Generator_TablePropName="List" msprop:Generator_RowDeletingName="ListRowDeleting" msprop:Generator_RowChangingName="ListRowChanging" msprop:Generator_RowEvHandlerName="ListRowChangeEventHandler" msprop:Generator_RowDeletedName="ListRowDeleted" msprop:Generator_UserTableName="List" msprop:Generator_RowChangedName="ListRowChanged" msprop:Generator_RowEvArgName="ListRowChangeEvent" msprop:Generator_RowClassName="ListRow">
+        <xs:element name="List" msprop:Generator_TableClassName="ListDataTable" msprop:Generator_TableVarName="tableList" msprop:Generator_RowChangedName="ListRowChanged" msprop:Generator_TablePropName="List" msprop:Generator_RowDeletingName="ListRowDeleting" msprop:Generator_RowChangingName="ListRowChanging" msprop:Generator_RowEvHandlerName="ListRowChangeEventHandler" msprop:Generator_RowDeletedName="ListRowDeleted" msprop:Generator_RowClassName="ListRow" msprop:Generator_UserTableName="List" msprop:Generator_RowEvArgName="ListRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -189,7 +189,7 @@ SELECT Id, Name, Type, Amount FROM List WHERE (Id = @Id)</CommandText>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:InCart" />
+      <xs:selector xpath=".//mstns:Cart" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
     <xs:unique name="List_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">

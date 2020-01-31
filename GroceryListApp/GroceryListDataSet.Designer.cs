@@ -24,7 +24,7 @@ namespace GroceryListApp {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class GroceryListDataSet : global::System.Data.DataSet {
         
-        private InCartDataTable tableInCart;
+        private CartDataTable tableCart;
         
         private ListDataTable tableList;
         
@@ -56,8 +56,8 @@ namespace GroceryListApp {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["InCart"] != null)) {
-                    base.Tables.Add(new InCartDataTable(ds.Tables["InCart"]));
+                if ((ds.Tables["Cart"] != null)) {
+                    base.Tables.Add(new CartDataTable(ds.Tables["Cart"]));
                 }
                 if ((ds.Tables["List"] != null)) {
                     base.Tables.Add(new ListDataTable(ds.Tables["List"]));
@@ -84,9 +84,9 @@ namespace GroceryListApp {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public InCartDataTable InCart {
+        public CartDataTable Cart {
             get {
-                return this.tableInCart;
+                return this.tableCart;
             }
         }
         
@@ -167,8 +167,8 @@ namespace GroceryListApp {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["InCart"] != null)) {
-                    base.Tables.Add(new InCartDataTable(ds.Tables["InCart"]));
+                if ((ds.Tables["Cart"] != null)) {
+                    base.Tables.Add(new CartDataTable(ds.Tables["Cart"]));
                 }
                 if ((ds.Tables["List"] != null)) {
                     base.Tables.Add(new ListDataTable(ds.Tables["List"]));
@@ -206,10 +206,10 @@ namespace GroceryListApp {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableInCart = ((InCartDataTable)(base.Tables["InCart"]));
+            this.tableCart = ((CartDataTable)(base.Tables["Cart"]));
             if ((initTable == true)) {
-                if ((this.tableInCart != null)) {
-                    this.tableInCart.InitVars();
+                if ((this.tableCart != null)) {
+                    this.tableCart.InitVars();
                 }
             }
             this.tableList = ((ListDataTable)(base.Tables["List"]));
@@ -228,15 +228,15 @@ namespace GroceryListApp {
             this.Namespace = "http://tempuri.org/GroceryListDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableInCart = new InCartDataTable();
-            base.Tables.Add(this.tableInCart);
+            this.tableCart = new CartDataTable();
+            base.Tables.Add(this.tableCart);
             this.tableList = new ListDataTable();
             base.Tables.Add(this.tableList);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeInCart() {
+        private bool ShouldSerializeCart() {
             return false;
         }
         
@@ -302,7 +302,7 @@ namespace GroceryListApp {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void InCartRowChangeEventHandler(object sender, InCartRowChangeEvent e);
+        public delegate void CartRowChangeEventHandler(object sender, CartRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void ListRowChangeEventHandler(object sender, ListRowChangeEvent e);
@@ -312,7 +312,7 @@ namespace GroceryListApp {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class InCartDataTable : global::System.Data.TypedTableBase<InCartRow> {
+        public partial class CartDataTable : global::System.Data.TypedTableBase<CartRow> {
             
             private global::System.Data.DataColumn columnId;
             
@@ -324,8 +324,8 @@ namespace GroceryListApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InCartDataTable() {
-                this.TableName = "InCart";
+            public CartDataTable() {
+                this.TableName = "Cart";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -333,7 +333,7 @@ namespace GroceryListApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal InCartDataTable(global::System.Data.DataTable table) {
+            internal CartDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -350,7 +350,7 @@ namespace GroceryListApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected InCartDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected CartDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -398,55 +398,55 @@ namespace GroceryListApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InCartRow this[int index] {
+            public CartRow this[int index] {
                 get {
-                    return ((InCartRow)(this.Rows[index]));
+                    return ((CartRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event InCartRowChangeEventHandler InCartRowChanging;
+            public event CartRowChangeEventHandler CartRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event InCartRowChangeEventHandler InCartRowChanged;
+            public event CartRowChangeEventHandler CartRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event InCartRowChangeEventHandler InCartRowDeleting;
+            public event CartRowChangeEventHandler CartRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event InCartRowChangeEventHandler InCartRowDeleted;
+            public event CartRowChangeEventHandler CartRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddInCartRow(InCartRow row) {
+            public void AddCartRow(CartRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InCartRow AddInCartRow(int Id, string Name, string Type, string Amount) {
-                InCartRow rowInCartRow = ((InCartRow)(this.NewRow()));
+            public CartRow AddCartRow(int Id, string Name, string Type, string Amount) {
+                CartRow rowCartRow = ((CartRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
                         Name,
                         Type,
                         Amount};
-                rowInCartRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowInCartRow);
-                return rowInCartRow;
+                rowCartRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCartRow);
+                return rowCartRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InCartRow FindById(int Id) {
-                return ((InCartRow)(this.Rows.Find(new object[] {
+            public CartRow FindById(int Id) {
+                return ((CartRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                InCartDataTable cln = ((InCartDataTable)(base.Clone()));
+                CartDataTable cln = ((CartDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -454,7 +454,7 @@ namespace GroceryListApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new InCartDataTable();
+                return new CartDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -491,28 +491,28 @@ namespace GroceryListApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InCartRow NewInCartRow() {
-                return ((InCartRow)(this.NewRow()));
+            public CartRow NewCartRow() {
+                return ((CartRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new InCartRow(builder);
+                return new CartRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(InCartRow);
+                return typeof(CartRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.InCartRowChanged != null)) {
-                    this.InCartRowChanged(this, new InCartRowChangeEvent(((InCartRow)(e.Row)), e.Action));
+                if ((this.CartRowChanged != null)) {
+                    this.CartRowChanged(this, new CartRowChangeEvent(((CartRow)(e.Row)), e.Action));
                 }
             }
             
@@ -520,8 +520,8 @@ namespace GroceryListApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.InCartRowChanging != null)) {
-                    this.InCartRowChanging(this, new InCartRowChangeEvent(((InCartRow)(e.Row)), e.Action));
+                if ((this.CartRowChanging != null)) {
+                    this.CartRowChanging(this, new CartRowChangeEvent(((CartRow)(e.Row)), e.Action));
                 }
             }
             
@@ -529,8 +529,8 @@ namespace GroceryListApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.InCartRowDeleted != null)) {
-                    this.InCartRowDeleted(this, new InCartRowChangeEvent(((InCartRow)(e.Row)), e.Action));
+                if ((this.CartRowDeleted != null)) {
+                    this.CartRowDeleted(this, new CartRowChangeEvent(((CartRow)(e.Row)), e.Action));
                 }
             }
             
@@ -538,14 +538,14 @@ namespace GroceryListApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.InCartRowDeleting != null)) {
-                    this.InCartRowDeleting(this, new InCartRowChangeEvent(((InCartRow)(e.Row)), e.Action));
+                if ((this.CartRowDeleting != null)) {
+                    this.CartRowDeleting(this, new CartRowChangeEvent(((CartRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveInCartRow(InCartRow row) {
+            public void RemoveCartRow(CartRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -572,7 +572,7 @@ namespace GroceryListApp {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "InCartDataTable";
+                attribute2.FixedValue = "CartDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -926,25 +926,25 @@ namespace GroceryListApp {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class InCartRow : global::System.Data.DataRow {
+        public partial class CartRow : global::System.Data.DataRow {
             
-            private InCartDataTable tableInCart;
+            private CartDataTable tableCart;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal InCartRow(global::System.Data.DataRowBuilder rb) : 
+            internal CartRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableInCart = ((InCartDataTable)(this.Table));
+                this.tableCart = ((CartDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableInCart.IdColumn]));
+                    return ((int)(this[this.tableCart.IdColumn]));
                 }
                 set {
-                    this[this.tableInCart.IdColumn] = value;
+                    this[this.tableCart.IdColumn] = value;
                 }
             }
             
@@ -952,10 +952,10 @@ namespace GroceryListApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Name {
                 get {
-                    return ((string)(this[this.tableInCart.NameColumn]));
+                    return ((string)(this[this.tableCart.NameColumn]));
                 }
                 set {
-                    this[this.tableInCart.NameColumn] = value;
+                    this[this.tableCart.NameColumn] = value;
                 }
             }
             
@@ -963,10 +963,10 @@ namespace GroceryListApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Type {
                 get {
-                    return ((string)(this[this.tableInCart.TypeColumn]));
+                    return ((string)(this[this.tableCart.TypeColumn]));
                 }
                 set {
-                    this[this.tableInCart.TypeColumn] = value;
+                    this[this.tableCart.TypeColumn] = value;
                 }
             }
             
@@ -974,10 +974,10 @@ namespace GroceryListApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Amount {
                 get {
-                    return ((string)(this[this.tableInCart.AmountColumn]));
+                    return ((string)(this[this.tableCart.AmountColumn]));
                 }
                 set {
-                    this[this.tableInCart.AmountColumn] = value;
+                    this[this.tableCart.AmountColumn] = value;
                 }
             }
         }
@@ -1045,22 +1045,22 @@ namespace GroceryListApp {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class InCartRowChangeEvent : global::System.EventArgs {
+        public class CartRowChangeEvent : global::System.EventArgs {
             
-            private InCartRow eventRow;
+            private CartRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InCartRowChangeEvent(InCartRow row, global::System.Data.DataRowAction action) {
+            public CartRowChangeEvent(CartRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InCartRow Row {
+            public CartRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1122,7 +1122,7 @@ namespace GroceryListApp.GroceryListDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class InCartTableAdapter : global::System.ComponentModel.Component {
+    public partial class CartTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1136,7 +1136,7 @@ namespace GroceryListApp.GroceryListDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public InCartTableAdapter() {
+        public CartTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1233,7 +1233,7 @@ namespace GroceryListApp.GroceryListDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "InCart";
+            tableMapping.DataSetTable = "Cart";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("Type", "Type");
@@ -1293,7 +1293,7 @@ SELECT Id, Name, Type, Amount FROM InCart WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(GroceryListDataSet.InCartDataTable dataTable) {
+        public virtual int Fill(GroceryListDataSet.CartDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1306,9 +1306,9 @@ SELECT Id, Name, Type, Amount FROM InCart WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual GroceryListDataSet.InCartDataTable GetData() {
+        public virtual GroceryListDataSet.CartDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            GroceryListDataSet.InCartDataTable dataTable = new GroceryListDataSet.InCartDataTable();
+            GroceryListDataSet.CartDataTable dataTable = new GroceryListDataSet.CartDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1316,7 +1316,7 @@ SELECT Id, Name, Type, Amount FROM InCart WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(GroceryListDataSet.InCartDataTable dataTable) {
+        public virtual int Update(GroceryListDataSet.CartDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -1324,7 +1324,7 @@ SELECT Id, Name, Type, Amount FROM InCart WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(GroceryListDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "InCart");
+            return this.Adapter.Update(dataSet, "Cart");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1877,7 +1877,7 @@ SELECT Id, Name, Type, Amount FROM List WHERE (Id = @Id)";
         
         private UpdateOrderOption _updateOrder;
         
-        private InCartTableAdapter _inCartTableAdapter;
+        private CartTableAdapter _cartTableAdapter;
         
         private ListTableAdapter _listTableAdapter;
         
@@ -1901,12 +1901,12 @@ SELECT Id, Name, Type, Amount FROM List WHERE (Id = @Id)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public InCartTableAdapter InCartTableAdapter {
+        public CartTableAdapter CartTableAdapter {
             get {
-                return this._inCartTableAdapter;
+                return this._cartTableAdapter;
             }
             set {
-                this._inCartTableAdapter = value;
+                this._cartTableAdapter = value;
             }
         }
         
@@ -1943,9 +1943,9 @@ SELECT Id, Name, Type, Amount FROM List WHERE (Id = @Id)";
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._inCartTableAdapter != null) 
-                            && (this._inCartTableAdapter.Connection != null))) {
-                    return this._inCartTableAdapter.Connection;
+                if (((this._cartTableAdapter != null) 
+                            && (this._cartTableAdapter.Connection != null))) {
+                    return this._cartTableAdapter.Connection;
                 }
                 if (((this._listTableAdapter != null) 
                             && (this._listTableAdapter.Connection != null))) {
@@ -1964,7 +1964,7 @@ SELECT Id, Name, Type, Amount FROM List WHERE (Id = @Id)";
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._inCartTableAdapter != null)) {
+                if ((this._cartTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._listTableAdapter != null)) {
@@ -1981,12 +1981,12 @@ SELECT Id, Name, Type, Amount FROM List WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(GroceryListDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._inCartTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.InCart.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._cartTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Cart.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._inCartTableAdapter.Update(updatedRows));
+                    result = (result + this._cartTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -2009,11 +2009,11 @@ SELECT Id, Name, Type, Amount FROM List WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(GroceryListDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._inCartTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.InCart.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._cartTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Cart.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._inCartTableAdapter.Update(addedRows));
+                    result = (result + this._cartTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -2043,11 +2043,11 @@ SELECT Id, Name, Type, Amount FROM List WHERE (Id = @Id)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._inCartTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.InCart.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._cartTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Cart.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._inCartTableAdapter.Update(deletedRows));
+                    result = (result + this._cartTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -2090,8 +2090,8 @@ SELECT Id, Name, Type, Amount FROM List WHERE (Id = @Id)";
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._inCartTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._inCartTableAdapter.Connection) == false))) {
+            if (((this._cartTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._cartTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -2132,13 +2132,13 @@ SELECT Id, Name, Type, Amount FROM List WHERE (Id = @Id)";
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._inCartTableAdapter != null)) {
-                    revertConnections.Add(this._inCartTableAdapter, this._inCartTableAdapter.Connection);
-                    this._inCartTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._inCartTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._inCartTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._inCartTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._inCartTableAdapter.Adapter);
+                if ((this._cartTableAdapter != null)) {
+                    revertConnections.Add(this._cartTableAdapter, this._cartTableAdapter.Connection);
+                    this._cartTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._cartTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._cartTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._cartTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._cartTableAdapter.Adapter);
                     }
                 }
                 if ((this._listTableAdapter != null)) {
@@ -2208,9 +2208,9 @@ SELECT Id, Name, Type, Amount FROM List WHERE (Id = @Id)";
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._inCartTableAdapter != null)) {
-                    this._inCartTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._inCartTableAdapter]));
-                    this._inCartTableAdapter.Transaction = null;
+                if ((this._cartTableAdapter != null)) {
+                    this._cartTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._cartTableAdapter]));
+                    this._cartTableAdapter.Transaction = null;
                 }
                 if ((this._listTableAdapter != null)) {
                     this._listTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._listTableAdapter]));
