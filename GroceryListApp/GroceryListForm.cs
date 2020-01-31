@@ -14,6 +14,7 @@ namespace GroceryListApp
 {
     public partial class GroceryListForm : Form
     {
+        SqlConnection connection;
         string connectionString;
         public GroceryListForm()
         {
@@ -24,8 +25,28 @@ namespace GroceryListApp
 
         private void GroceryListForm_Load(object sender, EventArgs e)
         {
-            
+            PopulateList();
+        }
 
+        private void PopulateList() 
+        {
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM List", connection))
+            {
+                DataTable listTable = new DataTable();
+                adapter.Fill(listTable);
+
+                //the column in the table to display in the list
+                listList.DisplayMember = "NAme";
+                //the reference column for when we're using the data
+                listList.ValueMember = "Id";
+                listList.DataSource = listTable;
+            }
+        }
+
+        private void listList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(listList.SelectedValue.ToString());
         }
     }
 }

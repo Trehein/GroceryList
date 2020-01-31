@@ -85,6 +85,7 @@
             this.listList.Name = "listList";
             this.listList.Size = new System.Drawing.Size(120, 186);
             this.listList.TabIndex = 4;
+            this.listList.SelectedIndexChanged += new System.EventHandler(this.listList_SelectedIndexChanged);
             // 
             // GroceryListForm
             // 
@@ -96,7 +97,7 @@
             this.Controls.Add(this.lblList);
             this.Controls.Add(this.lblCart);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GroceryListForm";
             this.Text = "GroceryList";
             this.Load += new System.EventHandler(this.GroceryListForm_Load);
