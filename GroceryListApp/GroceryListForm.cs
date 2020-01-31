@@ -7,28 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace GroceryListApp
 {
     public partial class GroceryListForm : Form
     {
+        string connectionString;
         public GroceryListForm()
         {
             InitializeComponent();
-        }
 
-        private void listBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.listBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.groceryListDataSet);
-
+            connectionString = ConfigurationManager.ConnectionStrings["GroceryListApp.Properties.Settings.GroceryListConnectionString"].ConnectionString;
         }
 
         private void GroceryListForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'groceryListDataSet.List' table. You can move, or remove it, as needed.
-            this.listTableAdapter.Fill(this.groceryListDataSet.List);
+            
 
         }
     }
