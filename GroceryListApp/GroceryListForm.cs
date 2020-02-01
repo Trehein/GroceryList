@@ -97,7 +97,6 @@ namespace GroceryListApp
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            //string query = "INSERT INTO List VALUES (@ItemName, @ItemType, @ItemAmount)";
             string query = "INSERT INTO List VALUES (@ItemName, @ItemType, @ItemAmount)";
 
 
@@ -109,6 +108,26 @@ namespace GroceryListApp
                 command.Parameters.AddWithValue("@ItemName", txtItemName.Text);
                 command.Parameters.AddWithValue("@ItemType", txtItemType.Text);
                 command.Parameters.AddWithValue("@ItemAmount", txtItemAmount.Text);
+
+                command.ExecuteNonQuery();
+            }
+
+            PopulateList();
+        }
+
+        private void btnUpdateItem_Click(object sender, EventArgs e)
+        {
+            string query = "UPDATE List SET Name = @ItemName, Type = @ItemType, Amount = @ItemAmount WHERE Id = @ItemId";
+
+            using (connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                connection.Open();
+
+                command.Parameters.AddWithValue("@ItemName", txtItemName.Text);
+                command.Parameters.AddWithValue("@ItemType", txtItemType.Text);
+                command.Parameters.AddWithValue("@ItemAmount", txtItemAmount.Text);
+                command.Parameters.AddWithValue("@ItemId", listList.SelectedValue);
 
                 command.ExecuteNonQuery();
             }
