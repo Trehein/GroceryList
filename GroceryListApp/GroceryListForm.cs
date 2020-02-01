@@ -16,6 +16,15 @@ namespace GroceryListApp
     {
         SqlConnection connection;
         string connectionString;
+        enum Type
+        {
+            Veggie,  
+            Fruit, 
+            Grain,  
+            Meat,  
+            Dairy   
+        };
+
         public GroceryListForm()
         {
             InitializeComponent();
@@ -26,6 +35,16 @@ namespace GroceryListApp
         {
             PopulateList();
             PopulateCart();
+            PopulateCBType();
+        }
+
+        private void PopulateCBType()
+        {
+            //utilizes the enum Type to populate values into the cbType for selection
+            foreach (string type in Enum.GetNames(typeof(Type)))
+            {
+                cbType.Items.Add(type);
+            }
         }
 
         //fires whenever listList changes
@@ -58,7 +77,33 @@ namespace GroceryListApp
         {
             RemoveFromCart();
         }
-
+        private void btnFilterList_Click(object sender, EventArgs e)
+        {
+            if (rdbShowAll.Checked)
+            {
+                PopulateList();
+            }
+            else if (rdbVeggie.Checked)
+            {
+                FilterListItems("Veggie");
+            }
+            else if (rdbFruit.Checked)
+            {
+                FilterListItems("Fruit");
+            }
+            else if (rdbGrain.Checked)
+            {
+                FilterListItems("Grain");
+            }
+            else if (rdbMeat.Checked)
+            {
+                FilterListItems("Meat");
+            }
+            else if (rdbDairy.Checked)
+            {
+                FilterListItems("Dairy");
+            }
+        }
         private void PopulateList() 
         {
             using (connection = new SqlConnection(connectionString))
@@ -207,32 +252,6 @@ namespace GroceryListApp
                 command.ExecuteNonQuery();
             }
             PopulateList();
-        }
-
-        private void btnFilterList_Click(object sender, EventArgs e)
-        {
-            if(rdbShowAll.Checked)
-            {
-                PopulateList();
-            } else if(rdbVeggie.Checked)
-            {
-                FilterListItems("Veggie");
-            } else if(rdbFruit.Checked)
-            {
-                FilterListItems("Fruit");
-            }
-            else if(rdbGrain.Checked)
-            {
-                FilterListItems("Grain");
-            }
-            else if(rdbMeat.Checked)
-            {
-                FilterListItems("Meat");
-            }
-            else if(rdbDairy.Checked)
-            {
-                FilterListItems("Dairy");
-            }
         }
     }
 }

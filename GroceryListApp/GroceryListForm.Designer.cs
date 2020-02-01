@@ -53,6 +53,7 @@
             this.rdbMeat = new System.Windows.Forms.RadioButton();
             this.rdbDairy = new System.Windows.Forms.RadioButton();
             this.btnFilterList = new System.Windows.Forms.Button();
+            this.cbType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.groceryListDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -311,11 +312,20 @@
             this.btnFilterList.UseVisualStyleBackColor = true;
             this.btnFilterList.Click += new System.EventHandler(this.btnFilterList_Click);
             // 
+            // cbType
+            // 
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Location = new System.Drawing.Point(818, 257);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(232, 24);
+            this.cbType.TabIndex = 19;
+            // 
             // GroceryListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1121, 559);
+            this.Controls.Add(this.cbType);
             this.Controls.Add(this.btnFilterList);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnRemoveCartItem);
@@ -373,6 +383,7 @@
         private System.Windows.Forms.RadioButton rdbVeggie;
         private System.Windows.Forms.RadioButton rdbShowAll;
         private System.Windows.Forms.Button btnFilterList;
+        private System.Windows.Forms.ComboBox cbType;
     }
 }
 
