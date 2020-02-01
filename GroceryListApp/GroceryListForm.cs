@@ -26,6 +26,8 @@ namespace GroceryListApp
         private void GroceryListForm_Load(object sender, EventArgs e)
         {
             PopulateList();
+            PopulateCart();
+
         }
 
         private void PopulateList() 
@@ -64,6 +66,7 @@ namespace GroceryListApp
         {
             string query = "INSERT INTO InCart (Id, Name, Type, Amount) SELECT Id, Name, Type, Amount FROM List WHERE Id = @ItemId";
 
+
             using (connection = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand(query, connection))
             {
@@ -79,14 +82,36 @@ namespace GroceryListApp
 
         private void RemoveFromList()
         {
-            string query = "";
+            string query = "DELETE FROM List WHERE Id = @ItemId";
 
             using (connection = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand(query, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
             {
+                connection.Open();
 
+                command.Parameters.AddWithValue("@ItemId", listList.SelectedValue);
+
+                command.ExecuteNonQuery();
             }
+
+            PopulateList();
+        }
+
+        private void RemoveFromCart()
+        {
+            string query = "DELETE FROM InCart WHERE Id = @ItemId";
+
+            using (connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                connection.Open();
+
+                command.Parameters.AddWithValue("@ItemId", listCart.SelectedValue);
+
+                command.ExecuteNonQuery();
+            }
+
+            PopulateCart();
         }
 
         //fires whenever listList changes
@@ -140,6 +165,14 @@ namespace GroceryListApp
             PopulateList();
         }
 
+        private void btnRemoveListItem_Click(object sender, EventArgs e)
+        {
+            RemoveFromList();
+        }
 
+        private void btnRemoveCartItem_Click(object sender, EventArgs e)
+        {
+            RemoveFromCart();
+        }
     }
 }

@@ -43,6 +43,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnUpdateItem = new System.Windows.Forms.Button();
+            this.btnRemoveListItem = new System.Windows.Forms.Button();
+            this.btnRemoveCartItem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.groceryListDataSet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             // lblList
             // 
             this.lblList.AutoSize = true;
-            this.lblList.Location = new System.Drawing.Point(289, 74);
+            this.lblList.Location = new System.Drawing.Point(321, 76);
             this.lblList.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblList.Name = "lblList";
             this.lblList.Size = new System.Drawing.Size(30, 17);
@@ -82,19 +84,19 @@
             this.listCart.FormattingEnabled = true;
             this.listCart.ItemHeight = 16;
             this.listCart.Location = new System.Drawing.Point(17, 95);
-            this.listCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listCart.Margin = new System.Windows.Forms.Padding(4);
             this.listCart.Name = "listCart";
-            this.listCart.Size = new System.Drawing.Size(159, 228);
+            this.listCart.Size = new System.Drawing.Size(193, 228);
             this.listCart.TabIndex = 3;
             // 
             // listList
             // 
             this.listList.FormattingEnabled = true;
             this.listList.ItemHeight = 16;
-            this.listList.Location = new System.Drawing.Point(293, 94);
-            this.listList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listList.Location = new System.Drawing.Point(325, 96);
+            this.listList.Margin = new System.Windows.Forms.Padding(4);
             this.listList.Name = "listList";
-            this.listList.Size = new System.Drawing.Size(159, 228);
+            this.listList.Size = new System.Drawing.Size(219, 228);
             this.listList.TabIndex = 4;
             this.listList.SelectedIndexChanged += new System.EventHandler(this.listList_SelectedIndexChanged);
             // 
@@ -105,8 +107,8 @@
             // 
             // btnAddToCart
             // 
-            this.btnAddToCart.Location = new System.Drawing.Point(185, 193);
-            this.btnAddToCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddToCart.Location = new System.Drawing.Point(217, 195);
+            this.btnAddToCart.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddToCart.Name = "btnAddToCart";
             this.btnAddToCart.Size = new System.Drawing.Size(100, 28);
             this.btnAddToCart.TabIndex = 5;
@@ -116,8 +118,8 @@
             // 
             // btnAddItem
             // 
-            this.btnAddItem.Location = new System.Drawing.Point(899, 94);
-            this.btnAddItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddItem.Location = new System.Drawing.Point(792, 96);
+            this.btnAddItem.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(100, 28);
             this.btnAddItem.TabIndex = 6;
@@ -128,7 +130,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(540, 100);
+            this.lblName.Location = new System.Drawing.Point(585, 100);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(45, 17);
@@ -137,24 +139,24 @@
             // 
             // txtItemName
             // 
-            this.txtItemName.Location = new System.Drawing.Point(607, 96);
-            this.txtItemName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtItemName.Location = new System.Drawing.Point(652, 96);
+            this.txtItemName.Margin = new System.Windows.Forms.Padding(4);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(132, 22);
             this.txtItemName.TabIndex = 8;
             // 
             // txtItemType
             // 
-            this.txtItemType.Location = new System.Drawing.Point(607, 140);
-            this.txtItemType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtItemType.Location = new System.Drawing.Point(652, 140);
+            this.txtItemType.Margin = new System.Windows.Forms.Padding(4);
             this.txtItemType.Name = "txtItemType";
             this.txtItemType.Size = new System.Drawing.Size(132, 22);
             this.txtItemType.TabIndex = 9;
             // 
             // txtItemAmount
             // 
-            this.txtItemAmount.Location = new System.Drawing.Point(607, 185);
-            this.txtItemAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtItemAmount.Location = new System.Drawing.Point(652, 185);
+            this.txtItemAmount.Margin = new System.Windows.Forms.Padding(4);
             this.txtItemAmount.Name = "txtItemAmount";
             this.txtItemAmount.Size = new System.Drawing.Size(132, 22);
             this.txtItemAmount.TabIndex = 10;
@@ -162,7 +164,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(541, 145);
+            this.label1.Location = new System.Drawing.Point(586, 145);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 17);
@@ -172,7 +174,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(541, 188);
+            this.label2.Location = new System.Drawing.Point(586, 188);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
@@ -181,7 +183,7 @@
             // 
             // btnUpdateItem
             // 
-            this.btnUpdateItem.Location = new System.Drawing.Point(899, 130);
+            this.btnUpdateItem.Location = new System.Drawing.Point(792, 132);
             this.btnUpdateItem.Name = "btnUpdateItem";
             this.btnUpdateItem.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateItem.TabIndex = 13;
@@ -189,11 +191,33 @@
             this.btnUpdateItem.UseVisualStyleBackColor = true;
             this.btnUpdateItem.Click += new System.EventHandler(this.btnUpdateItem_Click);
             // 
+            // btnRemoveListItem
+            // 
+            this.btnRemoveListItem.Location = new System.Drawing.Point(324, 332);
+            this.btnRemoveListItem.Name = "btnRemoveListItem";
+            this.btnRemoveListItem.Size = new System.Drawing.Size(220, 23);
+            this.btnRemoveListItem.TabIndex = 14;
+            this.btnRemoveListItem.Text = "Remove Selected List Item";
+            this.btnRemoveListItem.UseVisualStyleBackColor = true;
+            this.btnRemoveListItem.Click += new System.EventHandler(this.btnRemoveListItem_Click);
+            // 
+            // btnRemoveCartItem
+            // 
+            this.btnRemoveCartItem.Location = new System.Drawing.Point(17, 330);
+            this.btnRemoveCartItem.Name = "btnRemoveCartItem";
+            this.btnRemoveCartItem.Size = new System.Drawing.Size(193, 23);
+            this.btnRemoveCartItem.TabIndex = 15;
+            this.btnRemoveCartItem.Text = "Remove Selected Cart Item";
+            this.btnRemoveCartItem.UseVisualStyleBackColor = true;
+            this.btnRemoveCartItem.Click += new System.EventHandler(this.btnRemoveCartItem_Click);
+            // 
             // GroceryListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1121, 559);
+            this.Controls.Add(this.btnRemoveCartItem);
+            this.Controls.Add(this.btnRemoveListItem);
             this.Controls.Add(this.btnUpdateItem);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -235,6 +259,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnUpdateItem;
+        private System.Windows.Forms.Button btnRemoveListItem;
+        private System.Windows.Forms.Button btnRemoveCartItem;
     }
 }
 
