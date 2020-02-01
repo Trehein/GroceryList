@@ -98,7 +98,7 @@ namespace GroceryListApp
         private void btnAddItem_Click(object sender, EventArgs e)
         {
             //string query = "INSERT INTO List VALUES (@ItemName, @ItemType, @ItemAmount)";
-            string query = "INSERT INTO List VALUES (@ItemName, 'dairy', '1 block')";
+            string query = "INSERT INTO List VALUES (@ItemName, @ItemType, @ItemAmount)";
 
 
             using (connection = new SqlConnection(connectionString))
@@ -107,13 +107,13 @@ namespace GroceryListApp
                 connection.Open();
 
                 command.Parameters.AddWithValue("@ItemName", txtItemName.Text);
-                //command.Parameters.AddWithValue("@ItemType", txtItemType.Text);
-                //command.Parameters.AddWithValue("@ItemAmount", txtItemAmount.Text);
-
-                
+                command.Parameters.AddWithValue("@ItemType", txtItemType.Text);
+                command.Parameters.AddWithValue("@ItemAmount", txtItemAmount.Text);
 
                 command.ExecuteNonQuery();
             }
+
+            PopulateList();
         }
     }
 }
