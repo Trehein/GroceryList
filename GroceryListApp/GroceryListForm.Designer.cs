@@ -45,7 +45,16 @@
             this.btnUpdateItem = new System.Windows.Forms.Button();
             this.btnRemoveListItem = new System.Windows.Forms.Button();
             this.btnRemoveCartItem = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdbShowAll = new System.Windows.Forms.RadioButton();
+            this.rdbVeggie = new System.Windows.Forms.RadioButton();
+            this.rdbFruits = new System.Windows.Forms.RadioButton();
+            this.rdbGrains = new System.Windows.Forms.RadioButton();
+            this.rdbMeats = new System.Windows.Forms.RadioButton();
+            this.rdbDairy = new System.Windows.Forms.RadioButton();
+            this.btnFilterList = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.groceryListDataSet)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -211,11 +220,104 @@
             this.btnRemoveCartItem.UseVisualStyleBackColor = true;
             this.btnRemoveCartItem.Click += new System.EventHandler(this.btnRemoveCartItem_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdbDairy);
+            this.groupBox1.Controls.Add(this.rdbMeats);
+            this.groupBox1.Controls.Add(this.rdbGrains);
+            this.groupBox1.Controls.Add(this.rdbFruits);
+            this.groupBox1.Controls.Add(this.rdbVeggie);
+            this.groupBox1.Controls.Add(this.rdbShowAll);
+            this.groupBox1.Location = new System.Drawing.Point(588, 283);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(136, 194);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "List Filters";
+            // 
+            // rdbShowAll
+            // 
+            this.rdbShowAll.AutoSize = true;
+            this.rdbShowAll.Location = new System.Drawing.Point(7, 23);
+            this.rdbShowAll.Name = "rdbShowAll";
+            this.rdbShowAll.Size = new System.Drawing.Size(82, 21);
+            this.rdbShowAll.TabIndex = 0;
+            this.rdbShowAll.TabStop = true;
+            this.rdbShowAll.Text = "Show All";
+            this.rdbShowAll.UseVisualStyleBackColor = true;
+            // 
+            // rdbVeggie
+            // 
+            this.rdbVeggie.AutoSize = true;
+            this.rdbVeggie.Location = new System.Drawing.Point(7, 51);
+            this.rdbVeggie.Name = "rdbVeggie";
+            this.rdbVeggie.Size = new System.Drawing.Size(80, 21);
+            this.rdbVeggie.TabIndex = 1;
+            this.rdbVeggie.TabStop = true;
+            this.rdbVeggie.Text = "Veggies";
+            this.rdbVeggie.UseVisualStyleBackColor = true;
+            // 
+            // rdbFruits
+            // 
+            this.rdbFruits.AutoSize = true;
+            this.rdbFruits.Location = new System.Drawing.Point(7, 79);
+            this.rdbFruits.Name = "rdbFruits";
+            this.rdbFruits.Size = new System.Drawing.Size(64, 21);
+            this.rdbFruits.TabIndex = 2;
+            this.rdbFruits.TabStop = true;
+            this.rdbFruits.Text = "Fruits";
+            this.rdbFruits.UseVisualStyleBackColor = true;
+            // 
+            // rdbGrains
+            // 
+            this.rdbGrains.AutoSize = true;
+            this.rdbGrains.Location = new System.Drawing.Point(7, 107);
+            this.rdbGrains.Name = "rdbGrains";
+            this.rdbGrains.Size = new System.Drawing.Size(71, 21);
+            this.rdbGrains.TabIndex = 3;
+            this.rdbGrains.TabStop = true;
+            this.rdbGrains.Text = "Grains";
+            this.rdbGrains.UseVisualStyleBackColor = true;
+            // 
+            // rdbMeats
+            // 
+            this.rdbMeats.AutoSize = true;
+            this.rdbMeats.Location = new System.Drawing.Point(7, 135);
+            this.rdbMeats.Name = "rdbMeats";
+            this.rdbMeats.Size = new System.Drawing.Size(67, 21);
+            this.rdbMeats.TabIndex = 4;
+            this.rdbMeats.TabStop = true;
+            this.rdbMeats.Text = "Meats";
+            this.rdbMeats.UseVisualStyleBackColor = true;
+            // 
+            // rdbDairy
+            // 
+            this.rdbDairy.AutoSize = true;
+            this.rdbDairy.Location = new System.Drawing.Point(7, 163);
+            this.rdbDairy.Name = "rdbDairy";
+            this.rdbDairy.Size = new System.Drawing.Size(62, 21);
+            this.rdbDairy.TabIndex = 5;
+            this.rdbDairy.TabStop = true;
+            this.rdbDairy.Text = "Dairy";
+            this.rdbDairy.UseVisualStyleBackColor = true;
+            // 
+            // btnFilterList
+            // 
+            this.btnFilterList.Location = new System.Drawing.Point(589, 254);
+            this.btnFilterList.Name = "btnFilterList";
+            this.btnFilterList.Size = new System.Drawing.Size(75, 23);
+            this.btnFilterList.TabIndex = 18;
+            this.btnFilterList.Text = "Filter List";
+            this.btnFilterList.UseVisualStyleBackColor = true;
+            this.btnFilterList.Click += new System.EventHandler(this.btnFilterList_Click);
+            // 
             // GroceryListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1121, 559);
+            this.Controls.Add(this.btnFilterList);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnRemoveCartItem);
             this.Controls.Add(this.btnRemoveListItem);
             this.Controls.Add(this.btnUpdateItem);
@@ -237,6 +339,8 @@
             this.Text = "GroceryList";
             this.Load += new System.EventHandler(this.GroceryListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groceryListDataSet)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,6 +365,14 @@
         private System.Windows.Forms.Button btnUpdateItem;
         private System.Windows.Forms.Button btnRemoveListItem;
         private System.Windows.Forms.Button btnRemoveCartItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rdbDairy;
+        private System.Windows.Forms.RadioButton rdbMeats;
+        private System.Windows.Forms.RadioButton rdbGrains;
+        private System.Windows.Forms.RadioButton rdbFruits;
+        private System.Windows.Forms.RadioButton rdbVeggie;
+        private System.Windows.Forms.RadioButton rdbShowAll;
+        private System.Windows.Forms.Button btnFilterList;
     }
 }
 

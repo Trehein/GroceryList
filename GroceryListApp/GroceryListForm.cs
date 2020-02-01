@@ -91,6 +91,24 @@ namespace GroceryListApp
             }
         }
 
+        private void FilterVeggies()
+        {
+            //string query = "SELECT * FROM List WHERE Type = 'Veggie'";
+
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM List WHERE Type = 'Veggie'", connection))
+            {
+                DataTable listTable = new DataTable();
+                adapter.Fill(listTable);
+
+                //the column in the table to display in the list
+                listList.DisplayMember = "Name";
+                //the reference column for when we're using the data
+                listList.ValueMember = "Id";
+                listList.DataSource = listTable;
+            }
+        }
+
         private void AddToCart()
         {
             string query = "INSERT INTO InCart (Id, Name, Type, Amount) SELECT Id, Name, Type, Amount FROM List WHERE Id = @ItemId";
@@ -170,6 +188,11 @@ namespace GroceryListApp
             }
 
             PopulateList();
+        }
+
+        private void btnFilterList_Click(object sender, EventArgs e)
+        {
+            FilterVeggies();
         }
     }
 }
