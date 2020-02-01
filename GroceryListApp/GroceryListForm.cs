@@ -226,7 +226,7 @@ namespace GroceryListApp
                 connection.Open();
 
                 command.Parameters.AddWithValue("@ItemName", txtItemName.Text);
-                command.Parameters.AddWithValue("@ItemType", txtItemType.Text);
+                command.Parameters.AddWithValue("@ItemType", cbType.Text);
                 command.Parameters.AddWithValue("@ItemAmount", txtItemAmount.Text);
                 command.Parameters.AddWithValue("@ItemId", listList.SelectedValue);
 
@@ -246,7 +246,7 @@ namespace GroceryListApp
                 connection.Open();
 
                 command.Parameters.AddWithValue("@ItemName", txtItemName.Text);
-                command.Parameters.AddWithValue("@ItemType", txtItemType.Text);
+                command.Parameters.AddWithValue("@ItemType", cbType.Text);
                 command.Parameters.AddWithValue("@ItemAmount", txtItemAmount.Text);
 
                 command.ExecuteNonQuery();

@@ -38,7 +38,6 @@
             this.btnAddItem = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.txtItemName = new System.Windows.Forms.TextBox();
-            this.txtItemType = new System.Windows.Forms.TextBox();
             this.txtItemAmount = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,12 +45,12 @@
             this.btnRemoveListItem = new System.Windows.Forms.Button();
             this.btnRemoveCartItem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdbShowAll = new System.Windows.Forms.RadioButton();
-            this.rdbVeggie = new System.Windows.Forms.RadioButton();
-            this.rdbFruit = new System.Windows.Forms.RadioButton();
-            this.rdbGrain = new System.Windows.Forms.RadioButton();
-            this.rdbMeat = new System.Windows.Forms.RadioButton();
             this.rdbDairy = new System.Windows.Forms.RadioButton();
+            this.rdbMeat = new System.Windows.Forms.RadioButton();
+            this.rdbGrain = new System.Windows.Forms.RadioButton();
+            this.rdbFruit = new System.Windows.Forms.RadioButton();
+            this.rdbVeggie = new System.Windows.Forms.RadioButton();
+            this.rdbShowAll = new System.Windows.Forms.RadioButton();
             this.btnFilterList = new System.Windows.Forms.Button();
             this.cbType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.groceryListDataSet)).BeginInit();
@@ -155,14 +154,6 @@
             this.txtItemName.Size = new System.Drawing.Size(132, 22);
             this.txtItemName.TabIndex = 8;
             // 
-            // txtItemType
-            // 
-            this.txtItemType.Location = new System.Drawing.Point(652, 140);
-            this.txtItemType.Margin = new System.Windows.Forms.Padding(4);
-            this.txtItemType.Name = "txtItemType";
-            this.txtItemType.Size = new System.Drawing.Size(132, 22);
-            this.txtItemType.TabIndex = 9;
-            // 
             // txtItemAmount
             // 
             this.txtItemAmount.Location = new System.Drawing.Point(652, 185);
@@ -193,7 +184,7 @@
             // 
             // btnUpdateItem
             // 
-            this.btnUpdateItem.Location = new System.Drawing.Point(792, 140);
+            this.btnUpdateItem.Location = new System.Drawing.Point(792, 142);
             this.btnUpdateItem.Name = "btnUpdateItem";
             this.btnUpdateItem.Size = new System.Drawing.Size(186, 47);
             this.btnUpdateItem.TabIndex = 13;
@@ -236,49 +227,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "List Filters";
             // 
-            // rdbShowAll
+            // rdbDairy
             // 
-            this.rdbShowAll.AutoSize = true;
-            this.rdbShowAll.Location = new System.Drawing.Point(7, 23);
-            this.rdbShowAll.Name = "rdbShowAll";
-            this.rdbShowAll.Size = new System.Drawing.Size(82, 21);
-            this.rdbShowAll.TabIndex = 0;
-            this.rdbShowAll.TabStop = true;
-            this.rdbShowAll.Text = "Show All";
-            this.rdbShowAll.UseVisualStyleBackColor = true;
-            // 
-            // rdbVeggie
-            // 
-            this.rdbVeggie.AutoSize = true;
-            this.rdbVeggie.Location = new System.Drawing.Point(7, 51);
-            this.rdbVeggie.Name = "rdbVeggie";
-            this.rdbVeggie.Size = new System.Drawing.Size(73, 21);
-            this.rdbVeggie.TabIndex = 1;
-            this.rdbVeggie.TabStop = true;
-            this.rdbVeggie.Text = "Veggie";
-            this.rdbVeggie.UseVisualStyleBackColor = true;
-            // 
-            // rdbFruit
-            // 
-            this.rdbFruit.AutoSize = true;
-            this.rdbFruit.Location = new System.Drawing.Point(7, 79);
-            this.rdbFruit.Name = "rdbFruit";
-            this.rdbFruit.Size = new System.Drawing.Size(57, 21);
-            this.rdbFruit.TabIndex = 2;
-            this.rdbFruit.TabStop = true;
-            this.rdbFruit.Text = "Fruit";
-            this.rdbFruit.UseVisualStyleBackColor = true;
-            // 
-            // rdbGrain
-            // 
-            this.rdbGrain.AutoSize = true;
-            this.rdbGrain.Location = new System.Drawing.Point(7, 107);
-            this.rdbGrain.Name = "rdbGrain";
-            this.rdbGrain.Size = new System.Drawing.Size(64, 21);
-            this.rdbGrain.TabIndex = 3;
-            this.rdbGrain.TabStop = true;
-            this.rdbGrain.Text = "Grain";
-            this.rdbGrain.UseVisualStyleBackColor = true;
+            this.rdbDairy.AutoSize = true;
+            this.rdbDairy.Location = new System.Drawing.Point(7, 163);
+            this.rdbDairy.Name = "rdbDairy";
+            this.rdbDairy.Size = new System.Drawing.Size(62, 21);
+            this.rdbDairy.TabIndex = 5;
+            this.rdbDairy.TabStop = true;
+            this.rdbDairy.Text = "Dairy";
+            this.rdbDairy.UseVisualStyleBackColor = true;
             // 
             // rdbMeat
             // 
@@ -291,16 +249,49 @@
             this.rdbMeat.Text = "Meat";
             this.rdbMeat.UseVisualStyleBackColor = true;
             // 
-            // rdbDairy
+            // rdbGrain
             // 
-            this.rdbDairy.AutoSize = true;
-            this.rdbDairy.Location = new System.Drawing.Point(7, 163);
-            this.rdbDairy.Name = "rdbDairy";
-            this.rdbDairy.Size = new System.Drawing.Size(62, 21);
-            this.rdbDairy.TabIndex = 5;
-            this.rdbDairy.TabStop = true;
-            this.rdbDairy.Text = "Dairy";
-            this.rdbDairy.UseVisualStyleBackColor = true;
+            this.rdbGrain.AutoSize = true;
+            this.rdbGrain.Location = new System.Drawing.Point(7, 107);
+            this.rdbGrain.Name = "rdbGrain";
+            this.rdbGrain.Size = new System.Drawing.Size(64, 21);
+            this.rdbGrain.TabIndex = 3;
+            this.rdbGrain.TabStop = true;
+            this.rdbGrain.Text = "Grain";
+            this.rdbGrain.UseVisualStyleBackColor = true;
+            // 
+            // rdbFruit
+            // 
+            this.rdbFruit.AutoSize = true;
+            this.rdbFruit.Location = new System.Drawing.Point(7, 79);
+            this.rdbFruit.Name = "rdbFruit";
+            this.rdbFruit.Size = new System.Drawing.Size(57, 21);
+            this.rdbFruit.TabIndex = 2;
+            this.rdbFruit.TabStop = true;
+            this.rdbFruit.Text = "Fruit";
+            this.rdbFruit.UseVisualStyleBackColor = true;
+            // 
+            // rdbVeggie
+            // 
+            this.rdbVeggie.AutoSize = true;
+            this.rdbVeggie.Location = new System.Drawing.Point(7, 51);
+            this.rdbVeggie.Name = "rdbVeggie";
+            this.rdbVeggie.Size = new System.Drawing.Size(73, 21);
+            this.rdbVeggie.TabIndex = 1;
+            this.rdbVeggie.TabStop = true;
+            this.rdbVeggie.Text = "Veggie";
+            this.rdbVeggie.UseVisualStyleBackColor = true;
+            // 
+            // rdbShowAll
+            // 
+            this.rdbShowAll.AutoSize = true;
+            this.rdbShowAll.Location = new System.Drawing.Point(7, 23);
+            this.rdbShowAll.Name = "rdbShowAll";
+            this.rdbShowAll.Size = new System.Drawing.Size(82, 21);
+            this.rdbShowAll.TabIndex = 0;
+            this.rdbShowAll.TabStop = true;
+            this.rdbShowAll.Text = "Show All";
+            this.rdbShowAll.UseVisualStyleBackColor = true;
             // 
             // btnFilterList
             // 
@@ -315,9 +306,9 @@
             // cbType
             // 
             this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(818, 257);
+            this.cbType.Location = new System.Drawing.Point(652, 142);
             this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(232, 24);
+            this.cbType.Size = new System.Drawing.Size(132, 24);
             this.cbType.TabIndex = 19;
             // 
             // GroceryListForm
@@ -334,7 +325,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtItemAmount);
-            this.Controls.Add(this.txtItemType);
             this.Controls.Add(this.txtItemName);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.btnAddItem);
@@ -368,7 +358,6 @@
         private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtItemName;
-        private System.Windows.Forms.TextBox txtItemType;
         private System.Windows.Forms.TextBox txtItemAmount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
