@@ -19,7 +19,6 @@ namespace GroceryListApp
         public GroceryListForm()
         {
             InitializeComponent();
-
             connectionString = ConfigurationManager.ConnectionStrings["GroceryListApp.Properties.Settings.GroceryListConnectionString"].ConnectionString;
         }
 
@@ -27,7 +26,37 @@ namespace GroceryListApp
         {
             PopulateList();
             PopulateCart();
+        }
 
+        //fires whenever listList changes
+        private void listList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // MessageBox.Show(listList.SelectedValue.ToString());
+        }
+        private void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            AddToCart();
+            RemoveFromList();
+        }
+
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            AddListItem();
+        }
+
+        private void btnUpdateItem_Click(object sender, EventArgs e)
+        {
+            UpdateListItem();
+        }
+
+        private void btnRemoveListItem_Click(object sender, EventArgs e)
+        {
+            RemoveFromList();
+        }
+
+        private void btnRemoveCartItem_Click(object sender, EventArgs e)
+        {
+            RemoveFromCart();
         }
 
         private void PopulateList() 
@@ -66,17 +95,13 @@ namespace GroceryListApp
         {
             string query = "INSERT INTO InCart (Id, Name, Type, Amount) SELECT Id, Name, Type, Amount FROM List WHERE Id = @ItemId";
 
-
             using (connection = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 connection.Open();
-
                 command.Parameters.AddWithValue("@ItemId", listList.SelectedValue);
-
                 command.ExecuteNonQuery();
             }
-
             PopulateCart();
         }
 
@@ -88,12 +113,9 @@ namespace GroceryListApp
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 connection.Open();
-
                 command.Parameters.AddWithValue("@ItemId", listList.SelectedValue);
-
                 command.ExecuteNonQuery();
             }
-
             PopulateList();
         }
 
@@ -105,47 +127,13 @@ namespace GroceryListApp
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 connection.Open();
-
                 command.Parameters.AddWithValue("@ItemId", listCart.SelectedValue);
-
                 command.ExecuteNonQuery();
             }
-
             PopulateCart();
         }
 
-        //fires whenever listList changes
-        private void listList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // MessageBox.Show(listList.SelectedValue.ToString());
-        }
-
-        private void btnAddToCart_Click(object sender, EventArgs e)
-        {
-            AddToCart();
-        }
-
-        private void btnAddItem_Click(object sender, EventArgs e)
-        {
-            string query = "INSERT INTO List VALUES (@ItemName, @ItemType, @ItemAmount)";
-
-
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))
-            {
-                connection.Open();
-
-                command.Parameters.AddWithValue("@ItemName", txtItemName.Text);
-                command.Parameters.AddWithValue("@ItemType", txtItemType.Text);
-                command.Parameters.AddWithValue("@ItemAmount", txtItemAmount.Text);
-
-                command.ExecuteNonQuery();
-            }
-
-            PopulateList();
-        }
-
-        private void btnUpdateItem_Click(object sender, EventArgs e)
+        private void UpdateListItem()
         {
             string query = "UPDATE List SET Name = @ItemName, Type = @ItemType, Amount = @ItemAmount WHERE Id = @ItemId";
 
@@ -165,14 +153,23 @@ namespace GroceryListApp
             PopulateList();
         }
 
-        private void btnRemoveListItem_Click(object sender, EventArgs e)
+        private void AddListItem()
         {
-            RemoveFromList();
-        }
+            string query = "INSERT INTO List VALUES (@ItemName, @ItemType, @ItemAmount)";
 
-        private void btnRemoveCartItem_Click(object sender, EventArgs e)
-        {
-            RemoveFromCart();
+            using (connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                connection.Open();
+
+                command.Parameters.AddWithValue("@ItemName", txtItemName.Text);
+                command.Parameters.AddWithValue("@ItemType", txtItemType.Text);
+                command.Parameters.AddWithValue("@ItemAmount", txtItemAmount.Text);
+
+                command.ExecuteNonQuery();
+            }
+
+            PopulateList();
         }
     }
 }

@@ -118,7 +118,7 @@
             // 
             // btnAddItem
             // 
-            this.btnAddItem.Location = new System.Drawing.Point(792, 96);
+            this.btnAddItem.Location = new System.Drawing.Point(792, 94);
             this.btnAddItem.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(100, 28);
@@ -183,11 +183,11 @@
             // 
             // btnUpdateItem
             // 
-            this.btnUpdateItem.Location = new System.Drawing.Point(792, 132);
+            this.btnUpdateItem.Location = new System.Drawing.Point(792, 140);
             this.btnUpdateItem.Name = "btnUpdateItem";
-            this.btnUpdateItem.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateItem.Size = new System.Drawing.Size(186, 47);
             this.btnUpdateItem.TabIndex = 13;
-            this.btnUpdateItem.Text = "Update Item";
+            this.btnUpdateItem.Text = "Update Selected List Item";
             this.btnUpdateItem.UseVisualStyleBackColor = true;
             this.btnUpdateItem.Click += new System.EventHandler(this.btnUpdateItem_Click);
             // 
