@@ -62,14 +62,19 @@ namespace GroceryListApp
 
         private void AddToCart()
         {
-            string query = "";
+            string query = "INSERT INTO InCart (Id, Name, Type, Amount) SELECT Id, Name, Type, Amount FROM List WHERE Id = @ItemId";
 
             using (connection = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand(query, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
             {
+                connection.Open();
 
+                command.Parameters.AddWithValue("@ItemId", listList.SelectedValue);
+
+                command.ExecuteNonQuery();
             }
+
+            PopulateCart();
         }
 
         private void RemoveFromList()
@@ -92,7 +97,7 @@ namespace GroceryListApp
 
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
-
+            AddToCart();
         }
 
         private void btnAddItem_Click(object sender, EventArgs e)
@@ -134,5 +139,7 @@ namespace GroceryListApp
 
             PopulateList();
         }
+
+
     }
 }
