@@ -1,5 +1,1 @@
-﻿Select * from List
-
-select * from List where Type = 'Veggie'
-
-UPDATE List 
+﻿SELECT * FROM List WHERE Type = 'Veggie'

@@ -91,12 +91,32 @@ namespace GroceryListApp
             }
         }
 
-        private void FilterVeggies()
+        private void FilterListItems(string selectedFilter)
         {
-            //string query = "SELECT * FROM List WHERE Type = 'Veggie'";
+            //I tried to make use of string literals here but it was causing problems as an SQL query which is why I used a switch
+            string query = "";
+
+            switch(selectedFilter)
+            {
+                case "Veggie":
+                    query = "SELECT * FROM List WHERE Type = 'Veggie'";
+                    break;
+                case "Fruit":
+                    query = "SELECT * FROM List WHERE Type = 'Fruit'";
+                    break;
+                case "Grain":
+                    query = "SELECT * FROM List WHERE Type = 'Grain'";
+                    break;
+                case "Meat":
+                    query = "SELECT * FROM List WHERE Type = 'Meat'";
+                    break;
+                case "Dairy":
+                    query = "SELECT * FROM List WHERE Type = 'Dairy'";
+                    break;
+            }
 
             using (connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM List WHERE Type = 'Veggie'", connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
             {
                 DataTable listTable = new DataTable();
                 adapter.Fill(listTable);
@@ -186,13 +206,33 @@ namespace GroceryListApp
 
                 command.ExecuteNonQuery();
             }
-
             PopulateList();
         }
 
         private void btnFilterList_Click(object sender, EventArgs e)
         {
-            FilterVeggies();
+            if(rdbShowAll.Checked)
+            {
+                PopulateList();
+            } else if(rdbVeggie.Checked)
+            {
+                FilterListItems("Veggie");
+            } else if(rdbFruit.Checked)
+            {
+                FilterListItems("Fruit");
+            }
+            else if(rdbGrain.Checked)
+            {
+                FilterListItems("Grain");
+            }
+            else if(rdbMeat.Checked)
+            {
+                FilterListItems("Meat");
+            }
+            else if(rdbDairy.Checked)
+            {
+                FilterListItems("Dairy");
+            }
         }
     }
 }
